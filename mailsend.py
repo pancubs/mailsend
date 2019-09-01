@@ -78,7 +78,7 @@ def send():
         mail.send(msg)
         return 'Mail sent!'
     except Exception as e:
-        print(httpdate('We got an error at ' + datetime.datetime.now()))
+        print('We got an error at ' + httpdate(datetime.datetime.now()))
         print(str(e)) 
         return 'There was an error with that request.'
 
