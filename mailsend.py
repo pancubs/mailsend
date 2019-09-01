@@ -69,7 +69,8 @@ def send():
     """ Sends notifications via Flask-Mail. """
     try:
         data = request.get_json()
-        if data['authkey'] != os.environ.get('MAIL_AUTHKEY')
+        if data['authkey'] != os.environ.get('MAIL_AUTHKEY'): 
+            return "Ooops. Wrong `authkey`."
         msg = Message(data['subject'],
             sender=os.environ.get('MAIL_USERNAME'),
             recipients=[data['recipient']])
